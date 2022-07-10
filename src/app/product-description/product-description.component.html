@@ -1,4 +1,4 @@
-<div class="row description">
+<div class="row description" *ngIf="albumInfo">
   <div class="col-sm-2">
     <img src="{{albumInfo?.album.coverImage}}" alt="product image" />
   </div>
@@ -7,4 +7,8 @@
     <p class="band-name">{{albumInfo?.artist}}</p>
     <p class="album-release-date">{{albumInfo?.album.releaseDate}}</p>
   </div>
+</div>
+
+<div *ngIf="!albumInfo">
+  <h4>The product you're searching for does not exist</h4>
 </div>
